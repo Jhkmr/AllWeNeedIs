@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "ESFace Regular";
+  src: url("./fonts/ESFaceTRIAL-Regular.woff2");
+}
+
+@font-face {
+  font-family: "ESFace Italic";
+  src: url("./fonts/ESFaceTRIAL-Italic.woff");
+}
+
+@font-face {
+  font-family: "ESFace SemiBold";
+  src: url("./fonts/ESFaceTRIAL-SemiBold.woff");
+}
+
+@font-face {
+  font-family: "ESFace Bold";
+  src: url("./fonts/ESFaceTRIAL-Bold.woff");
+}
+
+@font-face {
+  font-family: "ESFace Light Italic";
+  src: url("./fonts/ESFaceTRIAL-LightItalic.woff2");
+}
+
+
+
