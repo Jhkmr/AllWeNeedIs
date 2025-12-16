@@ -76,10 +76,11 @@ body {
 
   /* background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1), 45%,rgb(23, 41, 157) 55%, rgb(155, 165, 189) 93%, rgba(199, 199, 199, 0) 100%); */
   background: rgb(155, 154, 153);
+  /* opacity: 0.7; */
   /* background: rgb(53, 192, 141); */
 
   /* border-right: solid 1.5px rgb(88, 88, 88); */
-  border-right: solid 1.5px rgb(0, 0, 0);
+  /* border-right: solid 1.5px rgb(0, 0, 0); */
 
 
   transform-origin: 60dvw 180dvh;
@@ -129,8 +130,10 @@ body {
 
 .kunst.kunst-rotate {
   transform: rotate(-90deg);
-  /* color: #00000000; */
+}
 
+.kunst.kunst-hide {
+  opacity: 0;
 }
 
 .kunst p {
@@ -156,7 +159,7 @@ body {
   transform-origin: bottom left;
   transform: rotate(90deg);
   opacity: 0;
-  transition: transform 0.35s ease-out, opacity 0.5s ease-out;
+  transition: transform 0.35s ease-out, opacity 0.15s ease-out;
 }
 
 .subject.subject-rotate-once {
@@ -169,6 +172,11 @@ body {
   transform: rotate(-90deg);
 }
 
+.subject.subject-hide {
+  opacity: 0;
+}
+
+
 .subject p {
     font-family: "ESFace Regular";     
     line-height: 1;
@@ -176,12 +184,12 @@ body {
 }
 
 .subject p sup {
-    font-family: "ESFace SemiBold";     
+    font-family: "ESFace Regular";     
     line-height: 1;
     /* text-emphasis-style: triangle; */
     padding-right: 8px;
     vertical-align: top;
-    font-size: 3dvh;
+    font-size: 2.8dvh;
 }
 
 /* ––––––––––––– upper diagonal scroll ––––––––––––– */
@@ -201,7 +209,7 @@ body {
   clip-path: polygon(
     0% 0%,    /* top-left slightly lower */
     100% 0%,   /* top-right */
-    100% 79.5%, /* bottom-right */
+    100% 82%, /* bottom-right */
     0% 100%    /* bottom-left */
   );
 }
@@ -246,7 +254,7 @@ body {
 .date p {
   font-family: "ESFace Italic";     
   line-height: 1;
-  font-size: 5dvh;
+  font-size: 4dvh;
   /* display: none; */
 }
 
@@ -264,10 +272,21 @@ body {
   transform-origin: center;
   transform: rotate(12deg);
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.35s cubic-bezier(1, 0, 0.435, 1.006);
 }
 
-.img {
+img{
+  position: absolute;
+  bottom: 0;
+  right: 1dvw;
+  margin-bottom: -20dvh;
+  transform-origin: bottom right;
+  height: 79dvh;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.imgDesc {
   display: block;
   padding-left: 2dvw;
   transform-origin: bottom right;
@@ -275,12 +294,17 @@ body {
   transform:  translateX(4.5dvw) rotate(90deg);
 }
 
-.img p {
+.imgDesc p {
     font-family: "ESFace Italic";     
     line-height: 1;
     font-size: 3dvh;
 }
 
+.imgDesc img {
+  height: 10dvw;
+  margin-right: 9dvw;
+  transform:  translateX(4.5dvw) rotate(0deg);
+}
 
 /* ––––––––––––– lower diagonal scroll ––––––––––––– */
 
@@ -350,30 +374,69 @@ body {
   /* outline: 2px solid blue; */
   height: 56dvh;
   justify-content: center;
-  padding-top: 30dvw;
-  padding-left: 10dvw;
+  padding-top: 5dvw;
+  padding-left: 5dvw;
   padding-right: 10dvw;
   /* transform: rotate(12deg); */
   opacity: 0;
-  transition: opacity 0.5s ease-out;
-
+  transition: opacity 0.5s cubic-bezier(1, 0, 0.435, 1.006);
+  /* transition-timing-function: cubic-bezier(1, 0, 0.435, 1.006); */
 }
 
 .info {
+  position: absolute;
   display: block;
-  padding-left: 2dvw;
-  transform-origin: bottom left;
-  /* transform: rotate(-12deg); */
+  top: 0;
+  padding-top: 15dvw;
+  margin-left: 6dvw;
+  /* padding-left: 1dvw; */
+  transform-origin: top left;
+  width: 72dvw;
+  /* transform: rotate(12deg); */
 }
 
 .info p {
-    font-family: "ESFace Regular";     
-    line-height: 1.1;
+    font-family: "MaisonNeue Book";     
+    line-height: 1.15;
     font-size: 8dvh;
+    text-align: justify;
+    hyphens: auto;
+    word-spacing: -1.5pt;
+}
+
+.shift {
+  margin-left: -6dvw;
+  width: 66dvw;
+}
+
+.shift span{
+  font-family: "ESFace Italic";
 }
 
 .wrapper-active {
     opacity: 1;
+}
+
+.vote {
+  position: relative;
+  display: block;
+  transform-origin: bottom right;
+  right: -56dvw;
+  margin-top: 30dvh;
+  /* transform:  rotate(90deg); */
+}
+
+.vote button {
+  all: unset;
+  font-family: "ESFace Italic";     
+  font-size: 4dvh;
+  transform:  rotate(102deg);
+}
+
+.vote sup {
+  font-family: "ESFace Italic";     
+  font-size: 2dvh;
+  transform:  rotate(102deg);
 }
 
 
@@ -397,10 +460,10 @@ body {
   }
 
   .kunst p{
-    font-size: 13dvh;
+    font-size: 25dvw;
   }
 
-  .img p {
+  .imgDesc p {
   font-size: 2dvh;
 }
 
@@ -413,7 +476,7 @@ body {
 }
 
   .subject p{
-    font-size: 7dvh;
+    font-size: 12dvw;
   }
 
   .subject p sup {

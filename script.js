@@ -27,32 +27,40 @@ function updateAnimations(stage) {
     if (stage >= 1) {
         title.classList.add("title-rotate");
         subtitle.classList.add("kunst-rotate");
+        subtitle.classList.add("kunst-hide");
         slanted.classList.add("background-title-rotate");
     } else {
         title.classList.remove("title-rotate");
         subtitle.classList.remove("kunst-rotate");
+        subtitle.classList.remove("kunst-hide");
         slanted.classList.remove("background-title-rotate");
     }
 
       // Subjects
-  subjects.forEach((subj, i) => {
-    const stage1 = 1 + i; // first rotation
-    const stage2 = 2 + i; // second rotation
+    subjects.forEach((subj, i) => {
+        const stage1 = 1 + i;
+        const stage2 = 2 + i;
 
-    if (stage >= stage2) {
-      // Second rotation
-      subj.classList.remove("subject-rotate-once");
-      subj.classList.add("subject-rotate-twice");
-    } else if (stage >= stage1) {
-      // First rotation
-      subj.classList.add("subject-rotate-once");
-      subj.classList.remove("subject-rotate-twice");
-    } else {
-      // Not yet rotated
-      subj.classList.remove("subject-rotate-once");
-      subj.classList.remove("subject-rotate-twice");
-    }
-  });
+        if (stage >= stage2) {
+            subj.classList.remove("subject-rotate-once");
+            subj.classList.add("subject-rotate-twice");
+
+            setTimeout(() => {
+            subj.classList.add("subject-hide");
+            }, 200);
+        } 
+        else if (stage >= stage1) {
+            subj.classList.add("subject-rotate-once");
+            subj.classList.remove("subject-rotate-twice", "subject-hide");
+        } 
+        else {
+            subj.classList.remove(
+            "subject-rotate-once",
+            "subject-rotate-twice",
+            "subject-hide"
+            );
+        }
+});
 
 }
 

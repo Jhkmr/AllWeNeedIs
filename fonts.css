@@ -23,5 +23,9 @@
   src: url("./fonts/ESFaceTRIAL-LightItalic.woff2");
 }
 
+@font-face {
+  font-family: "MaisonNeue Book";
+  src: url("./fonts/MaisonNeue-Book.woff2");
+}
 
 
