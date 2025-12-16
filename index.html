@@ -12,6 +12,11 @@
 
 </head>
 <body>
+    <div id="orientation-lock">
+  <div class="orientation-message">
+    This is a prototype, please view the website in vertical mode!
+  </div>
+</div>
     
    <div class="wrapper-title">
         <div class="title">
@@ -33,9 +38,16 @@
 
         <div class="wrapper-date">
             <div class="date">
-            <p>Vote – 31.03.2026</p>
+                <p id="countdown">
+                    <sup class="label">Vote ends in</sup>
+                    <span class="number" id="days">00</span><sup class="label">dd</sup> 
+                    <span class="number" id="hours">00</span><sup class="label">hh</sup> 
+                    <span class="number" id="minutes">00</span><sup class="label">mm</sup> 
+                    <span class="number" id="seconds">00</span><sup class="label">ss</sup>
+                </p>
             </div>
         </div>
+
         
         <div class="wrapper-img">
             <div class="img-frame mystery">
@@ -84,7 +96,7 @@
 
         <div class="wrapper-img">
             <div class="imgDesc">
-            <img src="files/logo.jpg" alt="">
+            <img src="files/logo.png" alt="">
             </div>
         </div>
     
@@ -183,16 +195,25 @@
 
         <div class="wrapper-info">
             <div class="info">
-            <p class="shift">Sechzig Jahre nach der demokratischen Erfolgsgeschichte der basler Piccassos ladet das Kunstmuseum die Öffentlichkeit ein, erneut die Stimme zu erheben, um der Sammlung  frische Perspektiven zu verleihen. Das gewählte Thema verwandelt den Besuch ins Kunstmuseum von <span>Februar</span> bis <span>August 2027</span> in ein individuelles Erlebnis. Mysteriös? Dramatisch? Stimme jetzt und erhalte beim Besuch eine Ermässigung sowie ein kleines Andenken. <span>Bis bald!</span></p>          
+            <p lang="de" xml:lang="de">Sechzig Jahre nach der demokratischen Erfolgsgeschichte der basler Piccassos ladet das Kunstmuseum die Öffentlichkeit ein, erneut die Stimme zu erheben, um der Sammlung  frische Perspektiven zu verleihen. Das gewählte Thema verwandelt den Besuch ins Kunstmuseum von <span>Februar</span> bis <span>August 2027</span> in ein individuelles Erlebnis. Mysteriös? Dramatisch? Stimme jetzt und erhalte beim Besuch eine Ermässigung sowie ein kleines Andenken. <span>Bis bald!</span></p>          
             </div>
         </div>
     
     </div>
 </div>
-    <!-- <div class="scroll">
-        
-    </div> -->
 
+    <div class="vote-overlay hidden">
+        <div class="overlay-content">      
+            <div class="email">
+                <p>Enter E-Mail</p>
+                <input type="text"/>
+                <p class="submit">Submit</p>
+            </div>
+            <div class="cancel">
+                <button class="close-overlay">✕</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="script.js"></script>

@@ -8,8 +8,7 @@
 
 body {
   margin: 5px;
-  /* background: rgb(199, 199, 199); */ 
-  background: rgb(155, 154, 153);
+  background: rgb(178, 177, 176);
 
   font-weight: auto;
   font-size: 16pt;
@@ -30,21 +29,13 @@ body {
   left: 27dvw;
   white-space: nowrap;
   /* outline: 2px solid blue; */
-  z-index: 10;
-  /* transition: left 0.3s ease-out; */
+  z-index: 11;
 }
-/* 
-.wrapper-title-move {
-  left: 27dvw;
-} */
 
 .title {
   display: inline-block;
   /* outline: 2px solid blue; */
-
-  /* background-color: rgb(199, 199, 199); */
   
-
   transform-origin: bottom left;
   transform: rotate(-82deg);
   transition: transform 0.35s ease-out;
@@ -64,29 +55,24 @@ body {
     width: 100dvh;
 }
 
-/* background */
+/* ––––––––––––– background ––––––––––––– */
 
 .background-title {
   position: fixed;
   /* left: -28dvw; */
   left: -33dvw;
   bottom: -20dvh;
-  width: 60dvw;              /* oversize to avoid gaps after rotation */
-  height: 200dvh;            /* visible full height */
+  width: 60dvw;       
+  height: 200dvh;       
 
-  /* background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1), 45%,rgb(23, 41, 157) 55%, rgb(155, 165, 189) 93%, rgba(199, 199, 199, 0) 100%); */
   background: rgb(178, 177, 176);
-  /* opacity: 0.7; */
-  /* background: rgb(53, 192, 141); */
 
-  /* border-right: solid 1.5px rgb(88, 88, 88); */
-  /* border-right: solid 1.5px rgb(0, 0, 0); */
 
 
   transform-origin: 60dvw 180dvh;
   transform: rotate(8deg);
 
-  z-index: 9;
+  z-index: 10;
 
   transition: transform 0.35s ease-out;
 }
@@ -96,24 +82,13 @@ body {
   transform: rotate(0deg);
 }
 
-/* line */
 
-.line{
-  width: 100dvw;
-  height: 50dvh;
-  border-bottom: dashed 2px rgb(88, 88, 88);
-  transform: rotate(-12deg);
-  position: fixed;
-}
-
-/* ––––––––––––– rotational scroll ––––––––––––– */
-
-/* rotating subtitle */
+/* ––––––––––––– rotating subtitle ––––––––––––– */
 
 .wrapper-kunst {
   position: fixed;
   bottom: 0;
-  left: 28vw;
+  left: 28dvw;
   white-space: nowrap;
   /* outline: 2px solid blue; */
 }
@@ -142,7 +117,7 @@ body {
     font-size: 12dvh;
 }
 
-/* subjects */
+/* ––––––––––––– subjects ––––––––––––– */
 
 .wrapper-subject {
   position: fixed;
@@ -203,11 +178,9 @@ body {
   overflow: hidden;    
   pointer-events: none;
   /* background: orange; */
-  /* background: linear-gradient(168deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1), 15%,rgb(23, 41, 157) 40%, rgb(155, 165, 189) 65%,rgba(199, 199, 199, 0) 80%, rgba(199, 199, 199, 0) 100%); */
-
 
   clip-path: polygon(
-    0% 0%,    /* top-left slightly lower */
+    0% 0%,    /* top-left lower */
     100% 0%,   /* top-right */
     100% 82%, /* bottom-right */
     0% 100%    /* bottom-left */
@@ -230,32 +203,42 @@ body {
 /* date */
 
 .wrapper-date {
-  display: flex;
   position: relative;
   white-space: nowrap;
-  padding-right: 3dvw;
-  padding-bottom: 3dvw;
-  /* outline: 2px solid blue; */
+  padding-right: 2dvw;
+  padding-top: 2dvw;
   height: 44dvh;
-  align-items: flex-end; 
-  justify-content: flex-end;
-  transform-origin: center;
+  text-align: left;
   transform: rotate(12deg);
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.35s cubic-bezier(1, 0, 0.435, 1.006);
+  align-content: start;
 }
 
 .date {
+  position: relative;
   display: block;
-  transform-origin: bottom right;
-  transform: translateX(-8dvw) rotate(90deg);
+  pointer-events: none;
 }
 
 .date p {
-  font-family: "ESFace Italic";     
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  
+  font-family: "ESFace Regular";     
   line-height: 1;
   font-size: 4dvh;
-  /* display: none; */
+  transform-origin: top right;
+  left: 100%;
+  transform: rotate(90deg);
+  
+}
+
+.label {
+  font-family: "ESFace Italic";
+  font-size: 1.7dvh;
 }
 
 /* img */
@@ -265,22 +248,21 @@ body {
   white-space: nowrap;
   padding-right: 1dvw;
   padding-bottom: 3dvw;
-  /* outline: 2px solid blue; */
   height: 44dvh;
-  /* align-content: end; */
   text-align: left;
-  /* transform-origin: center; */
   transform: rotate(12deg);
   opacity: 0;
   transition: opacity 0.35s cubic-bezier(1, 0, 0.435, 1.006);
   align-content: start;
-  
+
+  /* outline: 2px solid blue; */
 }
 
 .imgDesc {
   position: relative;
   display: block;
   pointer-events: none;
+  /* border: solid #ff0000; */
 }
 
 .imgDesc p {
@@ -300,7 +282,17 @@ body {
 .imgDesc p span{
   font-family: "ESFace Regular";     
   line-height: 1;
-  /* font-size: 3dvh; */
+}
+
+.imgDesc img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  transform-origin: top left;
+  left: 100%;
+  transform: rotate(90deg);
+  width: 20dvh;
 }
 
 .img-frame{
@@ -310,7 +302,7 @@ body {
   margin-bottom: -20dvh;
   transform-origin: bottom right;
   height: 79dvh;
-  width: 92vw;
+  width: 92dvw;
   transform: rotate(-12deg);
   overflow: hidden;
   pointer-events: none;
@@ -325,6 +317,7 @@ body {
   transform-origin: top left;
   transform: translate(50dvw, 0dvw) scale(1);
 }
+
 .drama img {
   position: absolute;
   top: 0;
@@ -334,6 +327,7 @@ body {
   transform-origin: top left;
   transform: translate(50dvw, 0dvw) scale(1.2);
 }
+
 .radiance img {
   position: absolute;
   top: 0;
@@ -343,6 +337,7 @@ body {
   transform-origin: top left;
   transform: translate(5dvw, 0dvw) scale(1);
 }
+
 .humor img {
   position: absolute;
   top: 0;
@@ -351,8 +346,8 @@ body {
   height: 80%;
   transform-origin: top left;
   transform: translate(85dvw, -28dvw) scale(1.5);
-  /* transform: translate(125dvw, -58dvw) scale(1.5); */
 }
+
 .sensuality img {
   position: absolute;
   top: 0;
@@ -373,11 +368,9 @@ body {
   width: 92dvw;
   height: 56dvh;
   overflow: hidden;    
-  pointer-events: none;
-  /* background: rgba(255, 0, 0, 0.399); */
 
   clip-path: polygon(
-    0% 18.5%,    /* top-left slightly lower */
+    0% 18.5%,    /* top-left lower */
     100% 0%,   /* top-right */
     100% 100%, /* bottom-right */
     0% 100%    /* bottom-left */
@@ -391,7 +384,6 @@ body {
   width: 100%;
   transition: transform 0.35s ease-out;
   will-change: transform;
-  /* border: solid black; */
 
   transform-origin: top left;
   rotate: -12deg;
@@ -405,7 +397,6 @@ body {
   /* outline: 2px solid blue; */
   height: 56dvh;
   align-content: end;
-  /* transform: rotate(12deg); */
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
@@ -428,38 +419,35 @@ body {
 
 .wrapper-info {
   position: relative;
-  /* white-space: nowrap; */
   /* outline: 2px solid blue; */
   height: 56dvh;
-  justify-content: center;
+  transform: rotate(12deg);
   padding-top: 5dvw;
   padding-left: 5dvw;
   padding-right: 10dvw;
-  /* transform: rotate(12deg); */
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(1, 0, 0.435, 1.006);
-  /* transition-timing-function: cubic-bezier(1, 0, 0.435, 1.006); */
 }
+
 
 .info {
   position: absolute;
   display: block;
   top: 0;
-  padding-top: 6dvh;
-  margin-left: 6.8dvw;
-  /* padding-left: 1dvw; */
-  transform-origin: top left;
+  padding-top: 2dvh;
+  margin-left: -3.5dvw;
   width: 72dvw;
-  /* transform: rotate(12deg); */
 }
 
 .info p {
     font-family: "MaisonNeue Book";     
-    line-height: 1.15;
+    line-height: 1.1;
     font-size: 8dvh;
     text-align: justify;
     hyphens: auto;
     word-spacing: -1.5pt;
+    transform: rotate(-12deg);
+    transform-origin: top right;
 }
 
 .shift span{
@@ -473,24 +461,28 @@ body {
 .vote {
   position: relative;
   display: block;
-  transform-origin: bottom right;
-  right: -59.2dvw;
-  margin-top: 30dvh;
-  /* transform:  rotate(90deg); */
-  /* border: solid; */
+  margin-top: 25dvh;
+  /* border: solid #ff0000; */
 }
 
 .vote button {
-  all: unset;
-  font-family: "ESFace Regular";     
-  font-size: 4.3dvh;
-  transform:  rotate(102deg);
-}
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;  
 
-.vote sup {
-  font-family: "ESFace Italic";     
-  font-size: 2dvh;
-  transform:  rotate(102deg);
+  background: none;
+  appearance: none;
+  color: inherit; 
+  border: none;
+  outline: none;
+
+  font-family: "ESFace Italic";
+  font-size: 4.5dvh;
+  line-height: 1.6;
+  transform-origin: top right;
+  left: 100%;
+  transform: rotate(90deg);
 }
 
 .vote button.I {
@@ -515,7 +507,126 @@ body {
 }
 
 
-/* phone view */
+/* ––––––––––––– vote submission ––––––––––––– */
+
+
+.vote-overlay {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 89dvh;
+    background: rgba(178, 177, 176, 1); 
+    /* background: rgb(255, 38, 38); */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.vote-overlay.hidden {
+    display: none;
+}
+
+.overlay-content {
+    /* background: rgba(255, 255, 255, 0.275); */
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: -20dvh;
+    transform-origin: bottom left;
+    height: 100dvh;
+    width: 75dvw;
+    overflow: hidden;
+    /* align-content: center; */
+  }
+
+  .email {
+    position: absolute;
+    top: 0dvh;
+    right: 5dvw;
+    transform-origin: bottom right;
+    height: 54dvh;
+    width: 67dvw;
+    /* border: solid #ff0000; */
+    transform: rotate(-12deg);
+    align-content: end;
+  }
+
+  .email p {
+    font-family: "ESFace Regular";    
+    font-size: 1.7dvh;
+    /* border: solid #001aff; */
+    text-align: end;
+  }
+
+  .email input {
+    right: 0;
+    /* border: solid #001aff; */
+    width: 100%;
+    height: 3dvh;
+    background: none;
+    border-style: solid;
+  }
+
+  .email .submit {
+    font-size: 3.2dvh;
+    text-align: start;
+    line-height: 1.5;
+    font-family: "ESFace Italic";    
+  }
+
+  .cancel {
+    position: relative;
+    display: block;
+    /* border: solid #ff0000; */
+  }
+
+  .close-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;  
+
+  background: none;
+  appearance: none;
+  color: inherit; 
+  border: none;
+  outline: none;
+
+  font-family: "MaisonNeue Book";
+  font-size: 4dvh;
+  line-height: 1;
+  transform-origin: top right;
+  }
+
+  /* .close-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;  
+  padding-top: 1dvw;
+
+  background: none;
+  appearance: none;
+  color: inherit; 
+  border: none;
+  outline: none;
+
+  font-family: "ESFace Italic";
+  font-size: 4.5dvh;
+  line-height: 1.6;
+  transform-origin: top right;
+  left: 100%;
+  transform: rotate(90deg);
+  } */
+
+
+
+
+/* ––––––––––––– phone view ––––––––––––– */
 
 @media only screen and (max-width: 600px) {
 
@@ -567,4 +678,36 @@ body {
   font-size: 1.7dvh;
   }
 
+}
+
+ /* ––––––––––––– orientation message –––––––––––––  */
+
+#orientation-lock {
+  position: fixed;
+  inset: 0;
+  background: rgb(178, 177, 176);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.orientation-message {
+  font-family: "ESFace Regular";
+  font-size: 4vh;
+  text-align: center;
+  color: black;
+}
+
+
+@media (orientation: landscape), (min-width: 601px){
+  #orientation-lock {
+    display: flex;
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;
+  }
 }
