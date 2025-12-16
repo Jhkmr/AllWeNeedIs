@@ -75,7 +75,7 @@ body {
   height: 200dvh;            /* visible full height */
 
   /* background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1), 45%,rgb(23, 41, 157) 55%, rgb(155, 165, 189) 93%, rgba(199, 199, 199, 0) 100%); */
-  background: rgb(155, 154, 153);
+  background: rgb(178, 177, 176);
   /* opacity: 0.7; */
   /* background: rgb(53, 192, 141); */
 
@@ -178,7 +178,7 @@ body {
 
 
 .subject p {
-    font-family: "ESFace Regular";     
+    font-family: "ESFace Italic";     
     line-height: 1;
     font-size: 8dvh;
 }
@@ -187,9 +187,9 @@ body {
     font-family: "ESFace Regular";     
     line-height: 1;
     /* text-emphasis-style: triangle; */
-    padding-right: 8px;
+    /* padding-right: 2px; */
     vertical-align: top;
-    font-size: 2.8dvh;
+    font-size: 1.7dvh;
 }
 
 /* ––––––––––––– upper diagonal scroll ––––––––––––– */
@@ -267,44 +267,102 @@ body {
   padding-bottom: 3dvw;
   /* outline: 2px solid blue; */
   height: 44dvh;
-  align-content: end;
-  text-align: right;
-  transform-origin: center;
+  /* align-content: end; */
+  text-align: left;
+  /* transform-origin: center; */
   transform: rotate(12deg);
   opacity: 0;
   transition: opacity 0.35s cubic-bezier(1, 0, 0.435, 1.006);
-}
-
-img{
-  position: absolute;
-  bottom: 0;
-  right: 1dvw;
-  margin-bottom: -20dvh;
-  transform-origin: bottom right;
-  height: 79dvh;
-  transform: rotate(-12deg);
-  pointer-events: none;
+  align-content: start;
+  
 }
 
 .imgDesc {
+  position: relative;
   display: block;
-  padding-left: 2dvw;
-  transform-origin: bottom right;
-  margin-right: 9dvw;
-  transform:  translateX(4.5dvw) rotate(90deg);
+  pointer-events: none;
 }
 
 .imgDesc p {
-    font-family: "ESFace Italic";     
-    line-height: 1;
-    font-size: 3dvh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  
+  font-family: "ESFace Italic";
+  font-size: 3dvh;
+  line-height: 1.1;
+  transform-origin: top right;
+  left: 100%;
+  transform: rotate(90deg);
 }
 
-.imgDesc img {
-  height: 10dvw;
-  margin-right: 9dvw;
-  transform:  translateX(4.5dvw) rotate(0deg);
+.imgDesc p span{
+  font-family: "ESFace Regular";     
+  line-height: 1;
+  /* font-size: 3dvh; */
 }
+
+.img-frame{
+  position: absolute;
+  top: -2dvh;
+  right: -5dvw;
+  margin-bottom: -20dvh;
+  transform-origin: bottom right;
+  height: 79dvh;
+  width: 92vw;
+  transform: rotate(-12deg);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mystery img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80%;
+  transform-origin: top left;
+  transform: translate(50dvw, 0dvw) scale(1);
+}
+.drama img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80%;
+  transform-origin: top left;
+  transform: translate(50dvw, 0dvw) scale(1.2);
+}
+.radiance img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80%;
+  transform-origin: top left;
+  transform: translate(5dvw, 0dvw) scale(1);
+}
+.humor img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80%;
+  transform-origin: top left;
+  transform: translate(85dvw, -28dvw) scale(1.5);
+  /* transform: translate(125dvw, -58dvw) scale(1.5); */
+}
+.sensuality img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 80%;
+  transform-origin: top;
+  transform: translate(29dvw, -21dvw) scale(1.5);
+}
+
 
 /* ––––––––––––– lower diagonal scroll ––––––––––––– */
 
@@ -387,8 +445,8 @@ img{
   position: absolute;
   display: block;
   top: 0;
-  padding-top: 15dvw;
-  margin-left: 6dvw;
+  padding-top: 6dvh;
+  margin-left: 6.8dvw;
   /* padding-left: 1dvw; */
   transform-origin: top left;
   width: 72dvw;
@@ -404,11 +462,6 @@ img{
     word-spacing: -1.5pt;
 }
 
-.shift {
-  margin-left: -6dvw;
-  width: 66dvw;
-}
-
 .shift span{
   font-family: "ESFace Italic";
 }
@@ -421,15 +474,16 @@ img{
   position: relative;
   display: block;
   transform-origin: bottom right;
-  right: -56dvw;
+  right: -59.2dvw;
   margin-top: 30dvh;
   /* transform:  rotate(90deg); */
+  /* border: solid; */
 }
 
 .vote button {
   all: unset;
-  font-family: "ESFace Italic";     
-  font-size: 4dvh;
+  font-family: "ESFace Regular";     
+  font-size: 4.3dvh;
   transform:  rotate(102deg);
 }
 
@@ -437,6 +491,27 @@ img{
   font-family: "ESFace Italic";     
   font-size: 2dvh;
   transform:  rotate(102deg);
+}
+
+.vote button.I {
+  color:rgb(38, 106, 53);
+}
+
+.vote button.II {
+  color:rgb(178, 63, 18);
+}
+
+.vote button.III {
+  color:rgb(208, 107, 0);
+}
+
+.vote button.IV {
+  color:rgb(255, 255, 255);
+}
+
+.vote button.V {
+  /* color:rgb(146, 80, 154); */
+  color:rgb(47, 81, 144);
 }
 
 
@@ -451,7 +526,7 @@ img{
   }
 
   body {
-    background: rgb(155, 154, 153);
+    background: rgb(178, 177, 176);
   }
 
   .title p{
@@ -464,7 +539,7 @@ img{
   }
 
   .imgDesc p {
-  font-size: 2dvh;
+  font-size: 1.7dvh;
 }
 
   .subtitle p{
@@ -481,7 +556,7 @@ img{
 
   .subject p sup {
     padding-right: 3px;
-    font-size: 3dvh;
+    font-size: 1.7dvh;
   }
 
   .info {
@@ -489,7 +564,7 @@ img{
   }
 
   .info p{
-    font-size: 1.7dvh;
+  font-size: 1.7dvh;
   }
 
 }

@@ -27,8 +27,11 @@ function updateAnimations(stage) {
     if (stage >= 1) {
         title.classList.add("title-rotate");
         subtitle.classList.add("kunst-rotate");
-        subtitle.classList.add("kunst-hide");
         slanted.classList.add("background-title-rotate");
+
+        setTimeout(() => {
+            subtitle.classList.add("kunst-hide");
+        }, 200);
     } else {
         title.classList.remove("title-rotate");
         subtitle.classList.remove("kunst-rotate");
