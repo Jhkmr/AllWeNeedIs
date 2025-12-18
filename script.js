@@ -1,6 +1,6 @@
 // Countdown
 
-const targetDate = new Date("2026-03-31T00:00:00");
+const targetDate = new Date("2025-12-31T00:00:00");
 
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
@@ -268,8 +268,8 @@ closeOverlay.addEventListener("click", () => {
 
 //Resize
 
-// window.addEventListener("resize", () => {
-//     stageDistanceDown = window.innerHeight * 0.56;
-//     stageDistanceUp   = window.innerHeight * 0.44;
-//     scrollToStage(currentStage);
-// });
+window.addEventListener("resize", () => {
+    stageDistanceDown = window.innerHeight * 0.56;
+    stageDistanceUp   = window.innerHeight * 0.44;
+    scrollToStage(currentStage);
+});
